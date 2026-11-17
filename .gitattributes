@@ -1,0 +1,4 @@
+*.ll linguist-detectable=false
+*.java linguist-detectable=false
+*.html linguist-detectable=false
+*.roff linguist-detectable=false
