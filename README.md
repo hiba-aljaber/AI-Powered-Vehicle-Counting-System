@@ -1,175 +1,72 @@
+
 # AI-Powered Vehicle Counting System
 
-An end-to-end vehicle detection, tracking, and counting platform combining computer vision, machine learning, backend services, and mobile application development.
-
-The system uses **YOLOv8** for vehicle detection, multiple tracking algorithms for object tracking, **FastAPI** for backend communication, and **.NET MAUI** for mobile monitoring.
+An AI-powered vehicle detection, tracking, and counting system designed to analyze traffic videos and camera streams.
 
 ## Project Overview
 
-The project consists of three integrated components:
+This project uses computer vision techniques to detect vehicles, track their movement, assign tracking IDs, and count vehicles crossing predefined counting lines.
 
-| Component | Technology | Description |
-|---|---|---|
-| Vehicle Detection | Python, YOLOv8 | Detects vehicles in video streams |
-| Tracking & Counting | DeepSORT, IOU-Kalman, SORT | Tracks vehicles and maintains object identities |
-| Backend API | FastAPI, MySQL | Receives, stores, and broadcasts detection events |
-| Mobile Application | C#, .NET MAUI | Displays vehicle information and statistics |
+The project was developed as part of a university team project.
 
-## System Architecture
+## Key Features
 
-1. A camera or video source provides input to the detection pipeline.
-2. YOLOv8 identifies vehicles in each frame.
-3. The selected tracking algorithm assigns and maintains vehicle IDs.
-4. The counting component detects vehicles crossing predefined virtual lines.
-5. Detection events are optionally transmitted to the backend through HTTP.
-6. FastAPI stores the information in MySQL and broadcasts real-time updates through WebSockets.
-7. The mobile application displays live vehicle information and historical statistics.
-
-## Repository Structure
-
-```text
-AI-Powered-Vehicle-Counting-System/
-│
-├── AracSayar Detection/
-│   └── Python-based vehicle detection,
-│       tracking, and counting pipeline
-│
-├── API-AI-vehicle-project/
-│   └── FastAPI backend and database integration
-│
-├── AracSayar Mobile/
-│   └── .NET MAUI mobile application
-│
-└── README.md
-```
+- Vehicle detection using YOLOv8.
+- Vehicle tracking using tracking algorithms, including DeepSORT, SORT, and IoU with Kalman filtering.
+- Unique IDs assigned to detected vehicles.
+- Vehicle counting using configurable counting lines.
+- Support for video files and camera input.
+- Backend communication through FastAPI.
+- REST API and WebSocket communication.
+- MySQL database integration.
+- Mobile application developed using .NET MAUI.
 
 ## Technologies Used
 
-**Machine Learning & Computer Vision**
+**Computer Vision and AI**
 - Python
 - YOLOv8
-- Ultralytics
-- DeepSORT
-- IOU-Kalman
-- SORT
 - OpenCV
+- DeepSORT
+- SORT
+- Kalman Filtering
 
-**Backend Development**
+**Backend and Database**
 - FastAPI
 - REST API
-- WebSockets
+- WebSocket
 - MySQL
 
 **Mobile Development**
-- C#
 - .NET MAUI
 
-## Main Features
+## System Architecture
 
-- Real-time vehicle detection.
-- Multiple object-tracking algorithm options.
-- Vehicle identification and tracking across video frames.
-- Vehicle counting using virtual counting lines.
-- Integration between the AI pipeline and backend API.
-- Real-time event communication through WebSockets.
-- Mobile monitoring and historical statistics.
+The system combines vehicle detection and tracking with backend services and a mobile application.
 
-## My Contribution
+1. Video or camera input is processed.
+2. YOLOv8 detects vehicles.
+3. Tracking algorithms associate detections across frames.
+4. Vehicles receive tracking IDs and are counted when crossing configured lines.
+5. The backend communicates system information to the application.
 
-This project was developed collaboratively as a university team project.
+## Project Structure
 
-My primary area of contribution was the **Machine Learning and Computer Vision component**, particularly the AI-based vehicle detection and tracking system.
+The repository contains the vehicle detection application and its related backend/mobile application components.
 
-The project is presented as a collaborative development effort, with individual contributions distinguished from the work of other team members.
+## Installation and Usage
 
-## Running the Project
+Please refer to the installation instructions and requirements in the individual project directories.
 
-### Requirements
+## Team Project
 
-- Python 3.10 or later
-- .NET 9 SDK
-- MySQL
-- Git
+This project was developed collaboratively as a university group project.
 
-### 1. Vehicle Detection Pipeline
-
-Navigate to the `AracSayar Detection` directory.
-
-Create and activate a virtual environment:
-
-```bash
-python -m venv .venv
-```
-
-Windows:
-
-```powershell
-.venv\Scripts\Activate.ps1
-```
-
-Install dependencies:
-
-```bash
-pip install -r deep_sort/requirements.txt
-pip install ultralytics
-```
-
-Run the detection pipeline:
-
-```bash
-python main.py --source testVideo.mp4 --display --tracker deepsort
-```
-
-Available tracker options include:
-
-- `deepsort`
-- `ioukalman`
-- `sort`
-
-### 2. Backend API
-
-Navigate to the backend directory and install its dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-Configure the MySQL database connection using the `DATABASE_URL` environment variable.
-
-Start the FastAPI server:
-
-```bash
-uvicorn main:app --reload --port 8000
-```
-
-API documentation:
-
-```text
-http://localhost:8000/docs
-```
-
-### 3. Mobile Application
-
-Navigate to the mobile application directory:
-
-```bash
-dotnet restore
-dotnet build
-```
-
-Configure the backend URL before running the application on your selected platform.
+**My contribution:** [Add your actual responsibilities here.]
 
 ## Future Improvements
 
-Potential improvements include:
-- Improving detection accuracy in challenging traffic conditions.
-- Optimizing real-time processing performance.
-- Expanding vehicle classification capabilities.
-- Enhancing the mobile monitoring interface.
-
-## Acknowledgements
-
-Developed collaboratively as a university team project.
-
-This repository is intended to showcase the project and the individual contributions made during its development.
-
+- Improve vehicle tracking consistency.
+- Enhance detection performance under different traffic and lighting conditions.
+- Improve system performance for real-time processing.
+- Expand application monitoring and reporting features.
